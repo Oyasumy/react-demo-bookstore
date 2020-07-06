@@ -60,8 +60,6 @@ const NhapSach = (props) => {
   };
 
   const changeNumberBook = (e) => {
-    console.log("e", e);
-
     setNumberDebt(e);
   };
 

@@ -57,3 +57,18 @@ export const handleUpdateQuantityBooksAfterCheckout = (data) => ({
     data,
   },
 });
+
+// update quantity book 
+export const handleAddListDataReportBCT = (data) => ({
+  type: Types.ADD_DATA_REPORT_BCT,
+  payload: {
+    data,
+  },
+});
+// update quantity book 
+export const handleAddListDataReportBCCN = (data) => ({
+  type: Types.ADD_DATA_REPORT_BCCN,
+  payload: {
+    data,
+  },
+});

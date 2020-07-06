@@ -6,7 +6,6 @@ const Checkout = (props) => {
 
   const [totalLast, setTotalLast] = useState(0);
 
-  console.log("price",price);
   
   useEffect(() => {
     setTotalLast(price);

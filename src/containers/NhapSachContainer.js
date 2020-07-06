@@ -58,23 +58,21 @@ const NhapSachContainer = (props) => {
 
   // add to cart
   const addToCartNS = (b, num) => {
-    console.log("data", b, num);
 
     if (b.soluong > NUMBER_BOOK_CAN_BE_ENTERED) {
-      return addToast(ERROR_MAXIMUM_BOOK_ENTERED, {
+      return addToast(ERROR_MAXIMUM_BOOK_ENTERED(NUMBER_BOOK_CAN_BE_ENTERED), {
         appearance: "error",
         autoDismiss: true,
       });
     }
 
     if (num < MINIMUM_BOOK_ENTERED) {
-      return addToast(ERROR_MINIMUM_BOOK_ENTERED, {
+      return addToast(ERROR_MINIMUM_BOOK_ENTERED(MINIMUM_BOOK_ENTERED), {
         appearance: "error",
         autoDismiss: true,
       });
     }
 
-    console.log("ok");
 
     b.num = parseInt(num);
 
@@ -86,7 +84,6 @@ const NhapSachContainer = (props) => {
   const checkoutNS = async (total) => {
     if (total === 0) return;
 
-    console.log("tot", total, cartData);
 
     // Data post to create bill
     var dataPostToCreateBill = [];
@@ -127,12 +124,10 @@ const NhapSachContainer = (props) => {
     };
 
     dataPost = { sach: dataPost };
-    console.log("data post", { data: dataPost });
 
     await axios
       .post(`${API_URL}/putbookapi/getphatsinh`, { data: dataPost })
       .then(async (res) => {
-        console.log("res", res);
 
         // Create data post to update bao cao ton
         var dataUpdateBCT = [];
@@ -143,7 +138,6 @@ const NhapSachContainer = (props) => {
         });
         dataUpdateBCT = { detailBooks: res.data };
 
-        console.log("data post 2", dataUpdateBCT);
 
         // Call Api
         await axios
@@ -151,18 +145,15 @@ const NhapSachContainer = (props) => {
             data: dataUpdateBCT,
           })
           .then(async (res) => {
-            console.log("res 2", res);
 
             // Create bill
 
-            console.log("data bill", dataPostToCreateBill);
 
             await axios
               .post(`${API_URL}/putbookapi/bill`, {
                 data: dataPostToCreateBill,
               })
               .then((res) => {
-                console.log("res 3", res);
 
                 actionBook.handleUpdateQuantityBooksAfterCheckout(cartData);
 
@@ -177,7 +168,6 @@ const NhapSachContainer = (props) => {
           });
       })
       .catch((err) => {
-        console.log("err", err);
         return addToast(ERROR_FROM_SEVER, {
           appearance: "error",
           autoDismiss: true,

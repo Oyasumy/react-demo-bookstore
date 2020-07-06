@@ -26,6 +26,15 @@ const Navigation = () => {
       label: "Thông tin Sách",
       exact: false,
     },
+    {
+      to: "/report",
+      label: "Báo Cáo",
+      exact: false,
+    }, {
+      to: "/changerules",
+      label: "Thay đổi quy định",
+      exact: false,
+    },
   ];
   const MenuLink = ({ label, to, exactOnlyWhenActive }) => {
     return (

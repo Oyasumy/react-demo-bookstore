@@ -39,7 +39,6 @@ const CartReducer = (state = initialValue, action) => {
       data = action.payload.data;
       var ind = findmasach(data, cartBanSach);
       result = cartBanSach.splice(ind, 1);
-      console.log("res", result);
       localStorage.setItem("carts", JSON.stringify(cartBanSach));
       return { ...state, cartBanSach: [...cartBanSach] };
 
@@ -61,7 +60,6 @@ const CartReducer = (state = initialValue, action) => {
     case TypesNS.ADD_TO_CART_NS:
       
       data = action.payload.data;
-      console.log("red ns",data);
       result = checkItemFormCartNS(cartNhapSach, data);
       localStorage.setItem("carts", JSON.stringify(result));
       return { ...state, cartNhapSach: [...result] };
@@ -86,7 +84,6 @@ const CartReducer = (state = initialValue, action) => {
       data = action.payload.data;
       ind = findmasach(data, cartNhapSach);
       result = cartNhapSach.splice(ind, 1);
-      console.log("res", result);
       localStorage.setItem("carts", JSON.stringify(cartNhapSach));
       return { ...state, cartNhapSach: [...cartNhapSach] };
 

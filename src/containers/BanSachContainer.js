@@ -64,6 +64,10 @@ const BanSachContainer = (props) => {
     moneyReceive,
     rest
   ) => {
+
+    // Check customer
+    if(customer) return;
+
     // check number
     var ck = [];
     if (cartData.length > 0) {
@@ -215,7 +219,6 @@ const BanSachContainer = (props) => {
               data: dataPostToGetPS,
             })
             .then(async (res) => {
-              console.log("res", res);
 
               // Create data post to update bao cao ton
               var dataUpdateBCT = [];
@@ -227,7 +230,6 @@ const BanSachContainer = (props) => {
               });
               dataUpdateBCT = { detailBooks: newdata };
 
-              console.log("data post 2", dataUpdateBCT);
 
               // Call Api
               await axios
@@ -235,11 +237,9 @@ const BanSachContainer = (props) => {
                   data: dataUpdateBCT,
                 })
                 .then((res) => {
-                  console.log("res 2", res);
                 });
             })
             .catch((err) => {
-              console.log("err", err);
             });
 
         } catch (error) {
