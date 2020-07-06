@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e7d3f8f496bcf02a1b3858a30b50eaa1",
+    "revision": "cad327043235e8f2a67277858be49ff7",
     "url": "/reacte-bookstore-demo/index.html"
   },
   {
-    "revision": "6db45465addbab2a333b",
+    "revision": "64683d5fa767803a4a24",
     "url": "/reacte-bookstore-demo/static/css/2.64bfed72.chunk.css"
   },
   {
-    "revision": "4ad78a5b428f2f361fbb",
+    "revision": "e4a31a5b353f6166611c",
     "url": "/reacte-bookstore-demo/static/css/main.921a4dad.chunk.css"
   },
   {
-    "revision": "6db45465addbab2a333b",
-    "url": "/reacte-bookstore-demo/static/js/2.7f82044a.chunk.js"
+    "revision": "64683d5fa767803a4a24",
+    "url": "/reacte-bookstore-demo/static/js/2.61c5ab92.chunk.js"
   },
   {
     "revision": "3b63cf165ca4643394e7b8966aedb3d0",
-    "url": "/reacte-bookstore-demo/static/js/2.7f82044a.chunk.js.LICENSE.txt"
+    "url": "/reacte-bookstore-demo/static/js/2.61c5ab92.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4ad78a5b428f2f361fbb",
-    "url": "/reacte-bookstore-demo/static/js/main.8391d78d.chunk.js"
+    "revision": "e4a31a5b353f6166611c",
+    "url": "/reacte-bookstore-demo/static/js/main.aedd7606.chunk.js"
   },
   {
     "revision": "3815b49ce9ce8280a044",

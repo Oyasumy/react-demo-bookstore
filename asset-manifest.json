@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/reacte-bookstore-demo/static/css/main.921a4dad.chunk.css",
-    "main.js": "/reacte-bookstore-demo/static/js/main.8391d78d.chunk.js",
-    "main.js.map": "/reacte-bookstore-demo/static/js/main.8391d78d.chunk.js.map",
+    "main.js": "/reacte-bookstore-demo/static/js/main.aedd7606.chunk.js",
+    "main.js.map": "/reacte-bookstore-demo/static/js/main.aedd7606.chunk.js.map",
     "runtime-main.js": "/reacte-bookstore-demo/static/js/runtime-main.f46b87f9.js",
     "runtime-main.js.map": "/reacte-bookstore-demo/static/js/runtime-main.f46b87f9.js.map",
     "static/css/2.64bfed72.chunk.css": "/reacte-bookstore-demo/static/css/2.64bfed72.chunk.css",
-    "static/js/2.7f82044a.chunk.js": "/reacte-bookstore-demo/static/js/2.7f82044a.chunk.js",
-    "static/js/2.7f82044a.chunk.js.map": "/reacte-bookstore-demo/static/js/2.7f82044a.chunk.js.map",
+    "static/js/2.61c5ab92.chunk.js": "/reacte-bookstore-demo/static/js/2.61c5ab92.chunk.js",
+    "static/js/2.61c5ab92.chunk.js.map": "/reacte-bookstore-demo/static/js/2.61c5ab92.chunk.js.map",
     "index.html": "/reacte-bookstore-demo/index.html",
-    "precache-manifest.311d67d23905770734254fc70ce96853.js": "/reacte-bookstore-demo/precache-manifest.311d67d23905770734254fc70ce96853.js",
+    "precache-manifest.26696b4d0b8d37916992e45762a10da5.js": "/reacte-bookstore-demo/precache-manifest.26696b4d0b8d37916992e45762a10da5.js",
     "service-worker.js": "/reacte-bookstore-demo/service-worker.js",
     "static/css/2.64bfed72.chunk.css.map": "/reacte-bookstore-demo/static/css/2.64bfed72.chunk.css.map",
     "static/css/main.921a4dad.chunk.css.map": "/reacte-bookstore-demo/static/css/main.921a4dad.chunk.css.map",
-    "static/js/2.7f82044a.chunk.js.LICENSE.txt": "/reacte-bookstore-demo/static/js/2.7f82044a.chunk.js.LICENSE.txt",
+    "static/js/2.61c5ab92.chunk.js.LICENSE.txt": "/reacte-bookstore-demo/static/js/2.61c5ab92.chunk.js.LICENSE.txt",
     "static/media/mdb.css": "/reacte-bookstore-demo/static/media/arrow_right.8ef6a08c.svg",
     "static/media/semantic.min.css": "/reacte-bookstore-demo/static/media/outline-icons.ef60a4f6.woff",
     "static/media/all.min.css": "/reacte-bookstore-demo/static/media/fa-solid-900.f3a7d3b5.woff"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.f46b87f9.js",
     "static/css/2.64bfed72.chunk.css",
-    "static/js/2.7f82044a.chunk.js",
+    "static/js/2.61c5ab92.chunk.js",
     "static/css/main.921a4dad.chunk.css",
-    "static/js/main.8391d78d.chunk.js"
+    "static/js/main.aedd7606.chunk.js"
   ]
 }
