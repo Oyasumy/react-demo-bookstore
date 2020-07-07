@@ -67,6 +67,19 @@ export const CHANGE_RULES_SUCCESS = "Change rules success !!";
 
 export const CHANGE_RULES_FAILED = "Change rules failed !!";
 
+export const CUSTOMER_NOT_AVAILABLE = "Customer is not available !!";
+
+export const PHONE_IS_EMPTY = "Phone Customer is empty !!";
+
+export const MONEY_RECEIVE_NOT_ENOUGH = "Money receive is not enough !!";
+
+export const ADD_DEBT_OR_CART_TO_PAYMENT = "Add pay debt or cart to payment !!";
+
+export const ADD_CART_TO_PAYMENT = "Ad cart to payment !!";
+
+export const ERROR_SELL_BOOK_WITH_INVENTORY=(text) => `Can sell book with inventory lower is ${text} !!`;
+
+
 export var ERROR_MINIMUM_BOOK_ENTERED =(text)=> `Minimum wage amount must be ${text}`;
 
 export var ERROR_MAXIMUM_BOOK_ENTERED =(text) => `Unable to import book because the number of remaining books is greater than ${text}`;

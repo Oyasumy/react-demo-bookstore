@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import { compose, bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import axios from "axios";
@@ -10,6 +10,11 @@ import {
   NUMBER_INVENTER,
   ERROR_FROM_SEVER,
   PAYMENT_SUCCESS,
+  CUSTOMER_NOT_AVAILABLE,
+  ERROR_SELL_BOOK_WITH_INVENTORY,
+  PHONE_IS_EMPTY,
+  MONEY_RECEIVE_NOT_ENOUGH,
+  ADD_DEBT_OR_CART_TO_PAYMENT,
 } from "../constants/ApiUrl";
 import BanSach from "../components/BanSach/BanSach";
 import { useToasts } from "react-toast-notifications";
@@ -40,18 +45,41 @@ const BanSachContainer = (props) => {
   const downQuantity = (c) => {
     actionCartBS.handleDownToCart(c);
   };
-  const getInfCus = async (phone) => {
-    var res = await axios.get(`${API_URL}/customer/${phone}`);
-    var { data } = res.data;
-    data = data[0];
 
-    if (Object.keys(data).length > 0) {
-      actionCartBS.handleAddCustomerBS(data);
-    }
+  const getInfCus = async (phone) => {
+    if (!phone)
+      return addToast(PHONE_IS_EMPTY, {
+        appearance: "error",
+        autoDismiss: true,
+      });
+
+    await axios
+      .get(`${API_URL}/customer/${phone}`)
+      .then((res) => {
+        var { data } = res.data;
+        data = data[0];
+
+        if (Object.keys(data).length > 0) {
+          actionCartBS.handleAddCustomerBS(data);
+        }
+      })
+      .catch((err) => {
+        return addToast(ERROR_FROM_SEVER, {
+          appearance: "error",
+          autoDismiss: true,
+        });
+      });
   };
 
   // add to cart
   const addToCartBS = (b) => {
+    console.log("book", b);
+    if (b.soluong - NUMBER_INVENTER < 0)
+      return addToast(ERROR_SELL_BOOK_WITH_INVENTORY(NUMBER_INVENTER), {
+        appearance: "error",
+        autoDismiss: true,
+      });
+
     var { handleAddToCart } = actionCartBS;
     handleAddToCart(b);
   };
@@ -64,9 +92,19 @@ const BanSachContainer = (props) => {
     moneyReceive,
     rest
   ) => {
-
     // Check customer
-    if(customer) return;
+    if (Object.keys(customer).length === 0)
+      return addToast(CUSTOMER_NOT_AVAILABLE, {
+        appearance: "error",
+        autoDismiss: true,
+      });
+
+    // Check total money
+    if (total === 0)
+      return addToast(ADD_DEBT_OR_CART_TO_PAYMENT, {
+        appearance: "error",
+        autoDismiss: true,
+      });
 
     // check number
     var ck = [];
@@ -98,6 +136,13 @@ const BanSachContainer = (props) => {
       );
     } else {
       if (cartData.length > 0 && cartData) {
+        // Check money receive
+        if (moneyReceive < total)
+          return addToast(MONEY_RECEIVE_NOT_ENOUGH, {
+            appearance: "error",
+            autoDismiss: true,
+          });
+
         var newCartData = [...cartData];
 
         try {
@@ -219,7 +264,6 @@ const BanSachContainer = (props) => {
               data: dataPostToGetPS,
             })
             .then(async (res) => {
-
               // Create data post to update bao cao ton
               var dataUpdateBCT = [];
               var ind = 0;
@@ -230,18 +274,14 @@ const BanSachContainer = (props) => {
               });
               dataUpdateBCT = { detailBooks: newdata };
 
-
               // Call Api
               await axios
                 .post(`${API_URL}/putbookapi/updatectbaocaoton`, {
                   data: dataUpdateBCT,
                 })
-                .then((res) => {
-                });
+                .then((res) => {});
             })
-            .catch((err) => {
-            });
-
+            .catch((err) => {});
         } catch (error) {
           return addToast(ERROR_FROM_SEVER, {
             appearance: "error",

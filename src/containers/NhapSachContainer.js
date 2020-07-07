@@ -13,6 +13,7 @@ import {
   NUMBER_BOOK_CAN_BE_ENTERED,
   ERROR_MAXIMUM_BOOK_ENTERED,
   PAYMENT_SUCCESS,
+  ADD_CART_TO_PAYMENT,
 } from "../constants/ApiUrl";
 import { useToasts } from "react-toast-notifications";
 import NhapSach from "../components/NhapSach/NhapSach";
@@ -82,7 +83,12 @@ const NhapSachContainer = (props) => {
 
   // check out
   const checkoutNS = async (total) => {
-    if (total === 0) return;
+
+    if (total === 0)
+    return addToast(ADD_CART_TO_PAYMENT, {
+      appearance: "error",
+      autoDismiss: true,
+    });
 
 
     // Data post to create bill
