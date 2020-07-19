@@ -14,7 +14,6 @@ import { NUMBER_DEBT } from "../../constants/ApiUrl";
 const Checkout = (props) => {
   var { price, customer, getInfCus, checkoutBS } = props;
 
-
   const [value, setValue] = useState("");
   const [checked, setChecked] = useState("");
   const [numberPay, setNumberPay] = useState(0);
@@ -38,7 +37,6 @@ const Checkout = (props) => {
   // }, [numberDebt]);
 
   useEffect(() => {
-
     if (Object.entries(customer).length === 0 && price === 0) {
       setTotalLast(0);
       setChecked(false);
@@ -74,8 +72,19 @@ const Checkout = (props) => {
   };
 
   const handleSetNumberDebt = (e) => {
-
     setNumberDebt(e);
+  };
+
+  const handleSetValue = (v) => {
+    v = parseInt(v);
+    console.log("v", v, typeof v);
+    if (isNaN(v)) return;
+    if (v.toString().length > 12) return;
+    setValue(v);
+    // if (v%2===0) {
+    //   setValue(0);
+
+    // }
   };
   return (
     <div className="col-lg-4">
@@ -90,7 +99,8 @@ const Checkout = (props) => {
                   <MDBBtn onClick={() => getInfCus(value)}>Search</MDBBtn>
                 )}
                 placeholder="Search..."
-                onChange={(e, { value }) => setValue(value)}
+                value={value}
+                onChange={(e, { value }) => handleSetValue(value)}
               />
             </li>
             {Object.keys(customer).length > 0 ? (
@@ -120,6 +130,20 @@ const Checkout = (props) => {
                       className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0"
                       style={{ marginBottom: "5%" }}
                     >
+                      <Button as="div" labelPosition="right">
+                        <Button basic color="blue">
+                          <Icon name="fork" />
+                          Debt
+                        </Button>
+                        <Label as="a" basic color="blue" pointing="left">
+                          Max: {(Math.ceil(price / 10)>=NUMBER_DEBT)?NUMBER_DEBT:(Math.ceil(price / 10)) }
+                        </Label>
+                      </Button>
+                    </li>
+                    <li
+                      className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0"
+                      style={{ marginBottom: "5%" }}
+                    >
                       {/* <Input labelPosition="right" type="text" placeholder="Amount">
                     <Label basic>$</Label> */}
                       {/* <NumberInput minValue={0} value={numberDebt} onChange={(e)=>setNumberDebt(e)} maxValue={Math.ceil(total/10)}/> */}
@@ -132,20 +156,6 @@ const Checkout = (props) => {
                     </li>
                     {/* <Label>.00</Label>
                   </Input> */}
-                    <li
-                      className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0"
-                      style={{ marginBottom: "5%" }}
-                    >
-                      <Button as="div" labelPosition="right">
-                        <Button basic color="blue">
-                          <Icon name="fork" />
-                          Debt
-                        </Button>
-                        <Label as="a" basic color="blue" pointing="left">
-                          Max: {Math.ceil(price / 10)}
-                        </Label>
-                      </Button>
-                    </li>
                   </>
                 ) : (
                   <li
@@ -194,7 +204,12 @@ const Checkout = (props) => {
                     <Label basic>$</Label>
                     <input
                       value={moneyRecieve}
-                      onChange={(e) => setMoneyRecieve(e.target.value)}
+                      onChange={(e) => {
+                        var v = parseInt(e.target.value);
+                        if (isNaN(v)) return;
+                        if (v.toString().length > 12) return;
+                        setMoneyRecieve(v);
+                      }}
                     />
                     <Label>.00</Label>
                   </Input>

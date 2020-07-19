@@ -30,7 +30,7 @@ const Sach = (props) => {
   const showBooks = (books) => {
     var result = null;
     if (!books) return null;
-    result = books.map((book,i) => {
+    result = books.map((book, i) => {
       return (
         <ListSach
           key={i}
@@ -197,7 +197,7 @@ const ModelAddOrEdit = (props) => {
           theloai,
           tacgia,
           soluong,
-          
+
           dongianhap,
         } = bookEdit;
         setBook({
@@ -207,12 +207,11 @@ const ModelAddOrEdit = (props) => {
           tacgia,
           soluong,
           dongianhap,
-          
         });
       }
     }
   }, [bookEdit]);
-  
+
   const ShowData = () => {
     if (book.masach < 0) {
       props.setApiAddBook(book);
@@ -223,7 +222,7 @@ const ModelAddOrEdit = (props) => {
   return (
     <>
       <Modal size="large" open={open} onClose={props.close}>
-        <Modal.Header>Delete Your Account</Modal.Header>
+        <Modal.Header>{book.masach>0?"Update a Book":"Add Book"}</Modal.Header>
         <Modal.Content scrolling>
           <Segment raised>
             <Label as="a" color="red" ribbon>
@@ -237,7 +236,11 @@ const ModelAddOrEdit = (props) => {
               iconPosition="left"
               placeholder="Name Book"
               value={book.tensach}
-              onChange={(e, { value }) => setBook({ ...book, tensach: value })}
+              onChange={(e, { value }) => {
+                if (value.length < 20) {
+                  setBook({ ...book, tensach: value });
+                }
+              }}
             />
           </Segment>
           <Segment raised>
@@ -252,7 +255,11 @@ const ModelAddOrEdit = (props) => {
               iconPosition="left"
               placeholder="Category"
               value={book.theloai}
-              onChange={(e, { value }) => setBook({ ...book, theloai: value })}
+              onChange={(e, { value }) => {
+                if (value.length < 20) {
+                  setBook({ ...book, theloai: value });
+                }
+              }}
             />
           </Segment>
           <Segment raised>
@@ -267,10 +274,14 @@ const ModelAddOrEdit = (props) => {
               iconPosition="left"
               placeholder="Author"
               value={book.tacgia}
-              onChange={(e, { value }) => setBook({ ...book, tacgia: value })}
+              onChange={(e, { value }) => {
+                if (value.length < 20) {
+                  setBook({ ...book, tacgia: value });
+                }
+              }}
             />
           </Segment>
-          <Segment raised>
+          {/* <Segment raised>
             <Label as="a" color="yellow" ribbon>
               Overview
             </Label>
@@ -304,8 +315,8 @@ const ModelAddOrEdit = (props) => {
               }
             />
           </Segment>
-          {/* <Segment raised>
-            <Label as="a" color="pink" ribbon>
+          {/* <Segment raised> */}
+          {/* <Label as="a" color="pink" ribbon>
               Price Out
             </Label>
             <span>Price Out</span>
@@ -321,7 +332,7 @@ const ModelAddOrEdit = (props) => {
                 setBook({ ...book, dongiaban: value })
               }
             /> 
-           </Segment> */}
+           </Segment>  */}
         </Modal.Content>
         <Modal.Actions>
           <Button negative onClick={props.close || props.setEmpty}>

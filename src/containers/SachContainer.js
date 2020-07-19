@@ -1,13 +1,16 @@
-import React  from "react";
+import React from "react";
 import Sach from "../components/Sach/Sach";
 import { compose, bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import axios from "axios";
 import * as action from "../actions/BookActions";
-import { API_URL } from "../constants/ApiUrl";
+import { API_URL, ERROR_FROM_SEVER } from "../constants/ApiUrl";
+import { useToasts } from "react-toast-notifications";
 
 const SachContainer = (props) => {
   var { listBooks, actionBook, editBook, isShowModel } = props;
+
+  const { addToast } = useToasts();
 
   // useEffect(() => {
   //   const getData = async () => {
@@ -29,25 +32,77 @@ const SachContainer = (props) => {
   };
 
   const setApiEditBook = async (b) => {
-    await axios.put(`${API_URL}/bookapi/books/${b.masach}`, {
-      sach: b,
-    });
-    actionBook.handleEditBooks(b);
+    await axios
+      .put(`${API_URL}/bookapi/books/${b.masach}`, {
+        sach: b,
+      })
+      .then((res) => {
+        console.log("res", res);
+
+        if (res.status === 201) {
+          actionBook.handleEditBooks(b);
+          return addToast("Success !!", {
+            appearance: "info",
+            autoDismiss: true,
+          });
+        }
+      })
+      .catch((err) => {
+        return addToast(ERROR_FROM_SEVER, {
+          appearance: "error",
+          autoDismiss: true,
+        });
+      });
     actionBook.handleShowModel();
   };
 
   const setApiAddBook = async (b) => {
-    await axios.post(`${API_URL}/bookapi/books`, { sach: b });
+    await axios
+      .post(`${API_URL}/bookapi/books`, { sach: b })
+      .then((res) => {
+        console.log("res", res);
+
+        if (res.status === 201) {
+          return addToast("Success !!", {
+            appearance: "info",
+            autoDismiss: true,
+          });
+        }
+      })
+      .catch((err) => {
+        return addToast(ERROR_FROM_SEVER, {
+          appearance: "error",
+          autoDismiss: true,
+        });
+      });
     actionBook.handleAddBooks(b);
     actionBook.handleShowModel();
   };
+
   const setOpen = () => {
     actionBook.handleShowModel();
   };
-  const setDelete =(b)=>{
-      
-      actionBook.handleDeleteBooks(b);
-  }
+  
+  const setDelete = async (b) => {
+    await axios
+      .get(`${API_URL}/bookapi/booksd/${b.masach}`)
+      .then((res) => {
+        console.log("res", res);
+        if (res.status === 201) {
+          actionBook.handleDeleteBooks(b);
+          return addToast("Success !!", {
+            appearance: "info",
+            autoDismiss: true,
+          });
+        }
+      })
+      .catch((err) => {
+        return addToast(ERROR_FROM_SEVER +" OR error foreign key constraint ", {
+          appearance: "error",
+          autoDismiss: true,
+        });
+      });
+  };
   return (
     <div>
       <Sach

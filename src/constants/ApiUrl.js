@@ -1,4 +1,4 @@
-export var API_URL = "http://localhost:4000";
+export var API_URL = "https://bookstore-api-react.herokuapp.com";
 
 export var NUMBER_DEBT = 20000;
 
@@ -79,6 +79,7 @@ export const ADD_CART_TO_PAYMENT = "Ad cart to payment !!";
 
 export const ERROR_SELL_BOOK_WITH_INVENTORY=(text) => `Can sell book with inventory lower is ${text} !!`;
 
+export const ERROR_SELL_BOOK_WITH_DEBT=(text) => `Can sell book with money debt is more than ${text} !!`;
 
 export var ERROR_MINIMUM_BOOK_ENTERED =(text)=> `Minimum wage amount must be ${text}`;
 

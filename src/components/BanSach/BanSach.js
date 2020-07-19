@@ -53,14 +53,14 @@ const BanSach = (props) => {
       <Container className="bg-w">
         <Header as="h2">Dogs Roles with Humans</Header>
         <div className="row">
-          <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3 mb-2 mt-5px">
+          <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-2 mt-5px">
             <Select
               placeholder="Select Book"
               options={value}
               onChange={(e, { value }) => handleCheckOption(value, books)}
             />
           </div>
-          <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3 mb-2 mt-5px">
+          <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-2 mt-5px">
             <Input
               type="text"
               placeholder={option.tacgia}
@@ -68,7 +68,15 @@ const BanSach = (props) => {
               tabIndex="-1"
             />
           </div>
-          <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3 mb-2 mt-5px">
+          <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-2 mt-5px">
+            <Input
+              type="text"
+              placeholder={option.dongiaban}
+              disabled
+              tabIndex="-1"
+            />
+          </div>
+          <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-2 mt-5px">
             <Input
               type="text"
               placeholder={
@@ -80,7 +88,7 @@ Quantity can buy ${option.soluong - NUMBER_INVENTER}`
               disabled
             />
           </div>
-          <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3 mb-2">
+          <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-2">
             <MDBBtn disabled={Object.entries(option).length === 0 ? true : false}
             onClick={() => getValueToCart()}>Add</MDBBtn>
           </div>

@@ -10,7 +10,7 @@ var initalState = {
       tacgia: "ntt",
       dongianhap: 23,
       dongiaban: 11,
-      soluong:123
+      soluong: 123,
     },
     {
       masach: 2,
@@ -19,7 +19,7 @@ var initalState = {
       tacgia: "ntt",
       dongianhap: 73,
       dongiaban: 51,
-      soluong:123
+      soluong: 123,
     },
   ],
   editBook: {},
@@ -48,6 +48,9 @@ const BookReducer = (state = initalState, action) => {
 
     case Types.ADD_BOOKS:
       data = action.payload.data;
+      data.dongianhap = 0;
+      data.dongiaban = 0;
+      data.soluong = 0;
       books = state.books;
       newData = books.concat(data);
       return { ...state, books: newData };
@@ -88,13 +91,37 @@ const BookReducer = (state = initalState, action) => {
 
     case Types.UPDATE_QUANTITY_AFTER_CHECKOUT:
       data = action.payload.data;
-      
+
       var newListBook = updateBook(data, books);
-      
+
       return { ...state, books: newListBook };
 
     default:
       return state;
+
+    case Types.UPDATE_PRICE:
+      data = action.payload.data;
+      console.log("bok", data);
+
+      var newBook = books.filter((m) => m.masach === data.masach);
+      newBook.forEach(m=>{
+        m.dongiaban= Math.ceil(data.dongianhap * RATE_OF_INPUT_UNIT_PRICE);
+        m.dongianhap=data.dongianhap
+      })
+      // newBook.dongianhap = data.dongianhap;
+      // newBook.dongiaban = Math.ceil(data.dongianhap * RATE_OF_INPUT_UNIT_PRICE);
+      console.log("bok2", newBook);
+      index = findIndex(state, data);
+
+      if (index > 0) {
+        newData = [...books.slice(0, index), newBook[0],...books.slice(index + 1)];
+      } else {
+        newData = [newBook[0],...books.slice(index + 1)];
+      }
+      return {
+        ...state,
+        books: newData,
+      };
   }
 };
 
@@ -110,11 +137,10 @@ const findIndex = (state, products) => {
   return result;
 };
 
-
 const updateBook = (data, books) => {
   data.forEach((cart) => {
     var ck = books.filter((b) => b.masach === cart.masach);
-    
+
     ck[0].soluong += cart.soluong;
   });
   return books;

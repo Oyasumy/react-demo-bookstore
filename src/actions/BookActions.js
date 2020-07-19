@@ -65,9 +65,18 @@ export const handleAddListDataReportBCT = (data) => ({
     data,
   },
 });
+
 // update quantity book 
 export const handleAddListDataReportBCCN = (data) => ({
   type: Types.ADD_DATA_REPORT_BCCN,
+  payload: {
+    data,
+  },
+});
+
+// update quantity book 
+export const handleUpdatePrice = (data) => ({
+  type: Types.UPDATE_PRICE,
   payload: {
     data,
   },

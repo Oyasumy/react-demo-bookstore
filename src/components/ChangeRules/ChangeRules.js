@@ -90,7 +90,12 @@ const ChangeRules = () => {
             name="miin"
             id="miin"
             value={minimumIn}
-            onChange={(e) => setMinimumIn(e.target.value)}
+            onChange={(e) => {
+              var v = parseInt(e.target.value);
+              if (isNaN(v)) return;
+              if (v.toString().length > 7) return;
+              setMinimumIn(v);
+            }}
           />
         </div>
         <div
@@ -113,7 +118,12 @@ const ChangeRules = () => {
             name="inin"
             id="inin"
             value={inventoryIn}
-            onChange={(e) => setInventoryIn(e.target.value)}
+            onChange={(e) => {
+              var v = parseInt(e.target.value);
+              if (isNaN(v)) return;
+              if (v.toString().length > 7) return;
+              setInventoryIn(v);
+            }}
           />
         </div>
         <div
@@ -136,7 +146,12 @@ const ChangeRules = () => {
             name="made"
             id="made"
             value={debtCustomer}
-            onChange={(e) => setDebtCustomer(e.target.value)}
+            onChange={(e) => {
+              var v = parseInt(e.target.value);
+              if (isNaN(v)) return;
+              if (v.toString().length > 7) return;
+              setDebtCustomer(v);
+            }}
           />
         </div>
         <div
@@ -159,7 +174,11 @@ const ChangeRules = () => {
             name="mibo"
             id="mibo"
             value={inventoryOut}
-            onChange={(e) => setInventoryOut(e.target.value)}
+            onChange={(e) => {
+              var v = parseInt(e.target.value);
+              if (isNaN(v)) return;
+              if (v.toString().length > 7) return;
+              setInventoryOut(v)}}
           />
         </div>
         <div

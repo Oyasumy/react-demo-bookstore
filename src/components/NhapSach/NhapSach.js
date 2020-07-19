@@ -18,11 +18,13 @@ const NhapSach = (props) => {
     downQuantity,
 
     addToCartNS,
-
+    updatePrice,
     checkoutNS,
   } = props;
   const [value, setValue] = useState("");
   const [option, setOption] = useState({});
+  
+  const [donGiaNhap, setDonGiaNhap] = useState(1);
 
   const [numberDebt, setNumberDebt] = useState(MINIMUM_BOOK_ENTERED);
 
@@ -41,6 +43,10 @@ const NhapSach = (props) => {
     });
     return result;
   };
+
+  useEffect(() => {
+    setDonGiaNhap(option.dongianhap)
+  }, [option])
 
   const handleCheckOption = (v, books = []) => {
     var result = null;
@@ -63,11 +69,44 @@ const NhapSach = (props) => {
     setNumberDebt(e);
   };
 
+  // const updatePrice=()=>{
+  //   console.log("pr",donGiaNhap);
+    
+  // }
+
   return (
     <div>
       <Container className="bg-w">
         <Header as="h2">Dogs Roles with Humans</Header>
         <div className="row">
+        <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 mb-2 mt-5px">
+            <Input
+              type="text"
+              placeholder={(option.dongianhap)}
+              // disabled
+              // as={input}
+              value={donGiaNhap}
+              name="dongianhap"
+              onChange={(e)=>{
+                var num=Math.abs( parseInt( e.target.value));
+                console.log("up",num,num.toString().length);
+
+                if(num.toString().length<6 && num){
+                  setDonGiaNhap(num);
+                  console.log("up2",num);
+                }
+              }}
+              tabIndex="-1"
+            />
+          </div>
+          <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 mb-2 mt-5px">
+          <MDBBtn
+              disabled={Object.entries(option).length === 0 ? true : false}
+              onClick={() => updatePrice(donGiaNhap,option.masach)}
+            >
+              Update Price
+            </MDBBtn>
+          </div>
           <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-2 mt-5px">
             <Select
               placeholder="Select Book"
@@ -94,7 +133,8 @@ const NhapSach = (props) => {
               disabled
             />
           </div>
-          <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3mb-2 mt-5vh">
+          
+          <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 mb-2 mt-5vh">
             <NumberInput
               // minValue={MINIMUM_BOOK_ENTERED}
               maxValue={1000}

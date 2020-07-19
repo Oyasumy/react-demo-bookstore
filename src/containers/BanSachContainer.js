@@ -15,6 +15,7 @@ import {
   PHONE_IS_EMPTY,
   MONEY_RECEIVE_NOT_ENOUGH,
   ADD_DEBT_OR_CART_TO_PAYMENT,
+  ERROR_SELL_BOOK_WITH_DEBT
 } from "../constants/ApiUrl";
 import BanSach from "../components/BanSach/BanSach";
 import { useToasts } from "react-toast-notifications";
@@ -95,6 +96,13 @@ const BanSachContainer = (props) => {
     // Check customer
     if (Object.keys(customer).length === 0)
       return addToast(CUSTOMER_NOT_AVAILABLE, {
+        appearance: "error",
+        autoDismiss: true,
+      });
+   
+      // Check debt customer
+    if (parseInt(customer.sotienno)+parseInt(numberDebt) >= NUMBER_DEBT)
+      return addToast(ERROR_SELL_BOOK_WITH_DEBT(NUMBER_DEBT), {
         appearance: "error",
         autoDismiss: true,
       });

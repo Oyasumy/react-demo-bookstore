@@ -57,9 +57,37 @@ const NhapSachContainer = (props) => {
     actionCartNS.handleDownToCart(c);
   };
 
+  const updatePrice = async (vl, masach) => {
+    console.log("up", vl, masach);
+    var b = { masach: masach, dongianhap: vl };
+    await axios
+      .post(`${API_URL}/bookapi/bookupdateprice`, {
+        sach: {
+          masach: masach,
+          dongianhap: vl,
+        },
+      })
+      .then((res) => {
+        console.log("res", res);
+
+        if (res.status === 201) {
+          actionBook.handleUpdatePrice(b);
+          return addToast("Success !!", {
+            appearance: "info",
+            autoDismiss: true,
+          });
+        }
+      })
+      .catch((err) => {
+        return addToast(ERROR_FROM_SEVER, {
+          appearance: "error",
+          autoDismiss: true,
+        });
+      });
+  };
+
   // add to cart
   const addToCartNS = (b, num) => {
-
     if (b.soluong > NUMBER_BOOK_CAN_BE_ENTERED) {
       return addToast(ERROR_MAXIMUM_BOOK_ENTERED(NUMBER_BOOK_CAN_BE_ENTERED), {
         appearance: "error",
@@ -74,7 +102,6 @@ const NhapSachContainer = (props) => {
       });
     }
 
-
     b.num = parseInt(num);
 
     var { handleAddToCart } = actionCartNS;
@@ -83,13 +110,11 @@ const NhapSachContainer = (props) => {
 
   // check out
   const checkoutNS = async (total) => {
-
     if (total === 0)
-    return addToast(ADD_CART_TO_PAYMENT, {
-      appearance: "error",
-      autoDismiss: true,
-    });
-
+      return addToast(ADD_CART_TO_PAYMENT, {
+        appearance: "error",
+        autoDismiss: true,
+      });
 
     // Data post to create bill
     var dataPostToCreateBill = [];
@@ -134,7 +159,6 @@ const NhapSachContainer = (props) => {
     await axios
       .post(`${API_URL}/putbookapi/getphatsinh`, { data: dataPost })
       .then(async (res) => {
-
         // Create data post to update bao cao ton
         var dataUpdateBCT = [];
         var ind = 0;
@@ -144,23 +168,19 @@ const NhapSachContainer = (props) => {
         });
         dataUpdateBCT = { detailBooks: res.data };
 
-
         // Call Api
         await axios
           .post(`${API_URL}/putbookapi/updatectbaocaoton`, {
             data: dataUpdateBCT,
           })
           .then(async (res) => {
-
             // Create bill
-
 
             await axios
               .post(`${API_URL}/putbookapi/bill`, {
                 data: dataPostToCreateBill,
               })
               .then((res) => {
-
                 actionBook.handleUpdateQuantityBooksAfterCheckout(cartData);
 
                 actionCartNS.handleClearToCart();
@@ -192,6 +212,7 @@ const NhapSachContainer = (props) => {
         downQuantity={downQuantity}
         addToCartNS={addToCartNS}
         checkoutNS={checkoutNS}
+        updatePrice={updatePrice}
       />
     </div>
   );
