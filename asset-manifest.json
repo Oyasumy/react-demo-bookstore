@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/react-demo-bookstore/static/css/main.921a4dad.chunk.css",
-    "main.js": "/react-demo-bookstore/static/js/main.48b00810.chunk.js",
-    "main.js.map": "/react-demo-bookstore/static/js/main.48b00810.chunk.js.map",
+    "main.js": "/react-demo-bookstore/static/js/main.1bc0ccef.chunk.js",
+    "main.js.map": "/react-demo-bookstore/static/js/main.1bc0ccef.chunk.js.map",
     "runtime-main.js": "/react-demo-bookstore/static/js/runtime-main.5816e705.js",
     "runtime-main.js.map": "/react-demo-bookstore/static/js/runtime-main.5816e705.js.map",
     "static/css/2.a7841d51.chunk.css": "/react-demo-bookstore/static/css/2.a7841d51.chunk.css",
-    "static/js/2.61c5ab92.chunk.js": "/react-demo-bookstore/static/js/2.61c5ab92.chunk.js",
-    "static/js/2.61c5ab92.chunk.js.map": "/react-demo-bookstore/static/js/2.61c5ab92.chunk.js.map",
+    "static/js/2.ad7c88ae.chunk.js": "/react-demo-bookstore/static/js/2.ad7c88ae.chunk.js",
+    "static/js/2.ad7c88ae.chunk.js.map": "/react-demo-bookstore/static/js/2.ad7c88ae.chunk.js.map",
     "index.html": "/react-demo-bookstore/index.html",
-    "precache-manifest.56cc61c4562f496dfe64ef9769501caf.js": "/react-demo-bookstore/precache-manifest.56cc61c4562f496dfe64ef9769501caf.js",
+    "precache-manifest.4fdd942446c6b918747ee1bccbf8f5ec.js": "/react-demo-bookstore/precache-manifest.4fdd942446c6b918747ee1bccbf8f5ec.js",
     "service-worker.js": "/react-demo-bookstore/service-worker.js",
     "static/css/2.a7841d51.chunk.css.map": "/react-demo-bookstore/static/css/2.a7841d51.chunk.css.map",
     "static/css/main.921a4dad.chunk.css.map": "/react-demo-bookstore/static/css/main.921a4dad.chunk.css.map",
-    "static/js/2.61c5ab92.chunk.js.LICENSE.txt": "/react-demo-bookstore/static/js/2.61c5ab92.chunk.js.LICENSE.txt",
+    "static/js/2.ad7c88ae.chunk.js.LICENSE.txt": "/react-demo-bookstore/static/js/2.ad7c88ae.chunk.js.LICENSE.txt",
     "static/media/mdb.css": "/react-demo-bookstore/static/media/arrow_right.8ef6a08c.svg",
     "static/media/semantic.min.css": "/react-demo-bookstore/static/media/outline-icons.ef60a4f6.woff",
     "static/media/all.min.css": "/react-demo-bookstore/static/media/fa-solid-900.f3a7d3b5.woff"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.5816e705.js",
     "static/css/2.a7841d51.chunk.css",
-    "static/js/2.61c5ab92.chunk.js",
+    "static/js/2.ad7c88ae.chunk.js",
     "static/css/main.921a4dad.chunk.css",
-    "static/js/main.48b00810.chunk.js"
+    "static/js/main.1bc0ccef.chunk.js"
   ]
 }
