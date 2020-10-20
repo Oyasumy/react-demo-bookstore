@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c6d745d63b99cc51091906414efcde06",
+    "revision": "06f0c97d31e9b02bb02914ae7247b2a7",
     "url": "/react-demo-bookstore/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-demo-bookstore/static/css/2.eb1f0123.chunk.css"
   },
   {
-    "revision": "9ea3445b0611298db9c5",
+    "revision": "0736f44e218fbcf9ded6",
     "url": "/react-demo-bookstore/static/css/main.921a4dad.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-demo-bookstore/static/js/2.2536251b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9ea3445b0611298db9c5",
-    "url": "/react-demo-bookstore/static/js/main.a86c40ef.chunk.js"
+    "revision": "0736f44e218fbcf9ded6",
+    "url": "/react-demo-bookstore/static/js/main.a11e0b2a.chunk.js"
   },
   {
     "revision": "77516eaf9e688e54511d",
