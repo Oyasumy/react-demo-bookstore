@@ -91,7 +91,7 @@ const NhapSach = (props) => {
                 var num=Math.abs( parseInt( e.target.value));
                 console.log("up",num,num.toString().length);
 
-                if(num.toString().length<6 && num){
+                if(num.toString().length<8 && num){
                   setDonGiaNhap(num);
                   console.log("up2",num);
                 }
