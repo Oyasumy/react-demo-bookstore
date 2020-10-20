@@ -275,7 +275,7 @@ const ModelAddOrEdit = (props) => {
               placeholder="Author"
               value={book.tacgia}
               onChange={(e, { value }) => {
-                if (value.length < 50) {
+                if (value.length <40) {
                   setBook({ ...book, tacgia: value });
                 }
               }}
