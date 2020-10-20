@@ -237,7 +237,7 @@ const ModelAddOrEdit = (props) => {
               placeholder="Name Book"
               value={book.tensach}
               onChange={(e, { value }) => {
-                if (value.length < 20) {
+                if (value.length < 70) {
                   setBook({ ...book, tensach: value });
                 }
               }}
@@ -256,7 +256,7 @@ const ModelAddOrEdit = (props) => {
               placeholder="Category"
               value={book.theloai}
               onChange={(e, { value }) => {
-                if (value.length < 20) {
+                if (value.length < 70) {
                   setBook({ ...book, theloai: value });
                 }
               }}
@@ -275,7 +275,7 @@ const ModelAddOrEdit = (props) => {
               placeholder="Author"
               value={book.tacgia}
               onChange={(e, { value }) => {
-                if (value.length < 20) {
+                if (value.length < 50) {
                   setBook({ ...book, tacgia: value });
                 }
               }}
