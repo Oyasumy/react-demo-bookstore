@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/react-demo-bookstore/static/css/main.921a4dad.chunk.css",
-    "main.js": "/react-demo-bookstore/static/js/main.a86c40ef.chunk.js",
-    "main.js.map": "/react-demo-bookstore/static/js/main.a86c40ef.chunk.js.map",
-    "runtime-main.js": "/react-demo-bookstore/static/js/runtime-main.5816e705.js",
-    "runtime-main.js.map": "/react-demo-bookstore/static/js/runtime-main.5816e705.js.map",
-    "static/css/2.eb1f0123.chunk.css": "/react-demo-bookstore/static/css/2.eb1f0123.chunk.css",
-    "static/js/2.2536251b.chunk.js": "/react-demo-bookstore/static/js/2.2536251b.chunk.js",
-    "static/js/2.2536251b.chunk.js.map": "/react-demo-bookstore/static/js/2.2536251b.chunk.js.map",
-    "index.html": "/react-demo-bookstore/index.html",
-    "precache-manifest.811f24610469f0df56c02828ffa34660.js": "/react-demo-bookstore/precache-manifest.811f24610469f0df56c02828ffa34660.js",
-    "service-worker.js": "/react-demo-bookstore/service-worker.js",
-    "static/css/2.eb1f0123.chunk.css.map": "/react-demo-bookstore/static/css/2.eb1f0123.chunk.css.map",
-    "static/css/main.921a4dad.chunk.css.map": "/react-demo-bookstore/static/css/main.921a4dad.chunk.css.map",
-    "static/js/2.2536251b.chunk.js.LICENSE.txt": "/react-demo-bookstore/static/js/2.2536251b.chunk.js.LICENSE.txt",
-    "static/media/mdb.css": "/react-demo-bookstore/static/media/arrow_right.8ef6a08c.svg",
-    "static/media/semantic.min.css": "/react-demo-bookstore/static/media/outline-icons.ef60a4f6.woff",
-    "static/media/all.min.css": "/react-demo-bookstore/static/media/fa-solid-900.f3a7d3b5.woff"
+    "main.css": "/react-demo-bookstore1/static/css/main.921a4dad.chunk.css",
+    "main.js": "/react-demo-bookstore1/static/js/main.df2f18cd.chunk.js",
+    "main.js.map": "/react-demo-bookstore1/static/js/main.df2f18cd.chunk.js.map",
+    "runtime-main.js": "/react-demo-bookstore1/static/js/runtime-main.262948fb.js",
+    "runtime-main.js.map": "/react-demo-bookstore1/static/js/runtime-main.262948fb.js.map",
+    "static/css/2.8e2e8ce9.chunk.css": "/react-demo-bookstore1/static/css/2.8e2e8ce9.chunk.css",
+    "static/js/2.2536251b.chunk.js": "/react-demo-bookstore1/static/js/2.2536251b.chunk.js",
+    "static/js/2.2536251b.chunk.js.map": "/react-demo-bookstore1/static/js/2.2536251b.chunk.js.map",
+    "index.html": "/react-demo-bookstore1/index.html",
+    "precache-manifest.1a1e1b7beba1404e452b08102ac4a8c4.js": "/react-demo-bookstore1/precache-manifest.1a1e1b7beba1404e452b08102ac4a8c4.js",
+    "service-worker.js": "/react-demo-bookstore1/service-worker.js",
+    "static/css/2.8e2e8ce9.chunk.css.map": "/react-demo-bookstore1/static/css/2.8e2e8ce9.chunk.css.map",
+    "static/css/main.921a4dad.chunk.css.map": "/react-demo-bookstore1/static/css/main.921a4dad.chunk.css.map",
+    "static/js/2.2536251b.chunk.js.LICENSE.txt": "/react-demo-bookstore1/static/js/2.2536251b.chunk.js.LICENSE.txt",
+    "static/media/mdb.css": "/react-demo-bookstore1/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/semantic.min.css": "/react-demo-bookstore1/static/media/outline-icons.ef60a4f6.woff",
+    "static/media/all.min.css": "/react-demo-bookstore1/static/media/fa-solid-900.f3a7d3b5.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.5816e705.js",
-    "static/css/2.eb1f0123.chunk.css",
+    "static/js/runtime-main.262948fb.js",
+    "static/css/2.8e2e8ce9.chunk.css",
     "static/js/2.2536251b.chunk.js",
     "static/css/main.921a4dad.chunk.css",
-    "static/js/main.a86c40ef.chunk.js"
+    "static/js/main.df2f18cd.chunk.js"
   ]
 }
