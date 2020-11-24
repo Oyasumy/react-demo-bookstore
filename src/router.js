@@ -10,11 +10,20 @@ const route=[
         path:"/",
         main: Home,
         exact:true
-    },{
+    }
+    ,
+    {
+        path:"/react-demo-bookstore",
+        main: Home,
+        exact:false
+    }
+    ,
+    {
         path:"/bansach",
         main: BanSach,
         exact:false
-    },{
+    }
+    ,{
         path:"/nhapsach",
         main: NhapSach,
         exact:false
