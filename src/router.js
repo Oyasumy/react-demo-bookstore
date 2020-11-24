@@ -13,9 +13,9 @@ const route=[
     }
     ,
     {
-        path:"/react-demo-bookstore",
+        path:"/react-demo-bookstore/",
         main: Home,
-        exact:false
+        exact:true
     }
     ,
     {
