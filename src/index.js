@@ -13,6 +13,8 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 // 
 
+// console.log("ok");
+
 const store = configStore();
 
 ReactDOM.render(
